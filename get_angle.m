@@ -1,4 +1,4 @@
-function angle=qiu_angle(i,j,points)
+function angle=get_angle(i,j,points)
     A=zeros(4,1);
     B=zeros(4,1);
     A=points(1:4,i);

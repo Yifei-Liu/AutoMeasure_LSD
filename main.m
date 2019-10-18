@@ -64,7 +64,7 @@ flag=zeros(1,n*3);%表示是否已经画过了
 while(true)%外层循环
     while(true)%内层循环
 %         a=a+1;
-         if(i<j && flag(i)==0 && flag(j)==0&&  qiu_angle(i,j,new_points)<angle_thres &&issuit(i,j,new_points)==1 &&  solve_min_length(i,j,new_points)<dis_thres   )%&& suit(i,j)==1 
+         if(i<j && flag(i)==0 && flag(j)==0&&  get_angle(i,j,new_points)<angle_thres &&issuit(i,j,new_points)==1 &&  solve_min_length(i,j,new_points)<dis_thres   )%&& suit(i,j)==1 
                 flag(i)=1;
                 flag(j)=1;
                 [min_length,max_length,minn,maxx,len] = minimum_range(new_points(1:4,i),new_points(1:4,j));
@@ -141,7 +141,7 @@ dis_thres=150;%两条直线距离阈值150
 while(true)%外层循环
     while(true)%内层循环
 %         a=a+1;
-         if(i<j && flag(i)==0 && flag(j)==0 &&  qiu_angle(i,j,final_points)<angle_thres1 &&(dis_bet_segment( i,j,final_points )< segment_dis_thres || solve_min_length(i,j,final_points)<dis_thres  ))
+         if(i<j && flag(i)==0 && flag(j)==0 &&  get_angle(i,j,final_points)<angle_thres1 &&(dis_bet_segment( i,j,final_points )< segment_dis_thres || solve_min_length(i,j,final_points)<dis_thres  ))
                 flag(i)=1;
                 flag(j)=1;
                 [min_length,max_length,minn,maxx,len] = minimum_range(final_points(1:4,i),final_points(1:4,j));
